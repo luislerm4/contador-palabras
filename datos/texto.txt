@@ -1,0 +1,8 @@
+Java es un lenguaje de programación.
+Java permite desarrollar diferentes tipos de aplicaciones.
+
+Un programa Java puede leer información de archivos.
+Un programa Java también puede escribir información en archivos.
+
+Los flujos de entrada permiten leer datos.
+Los flujos de salida permiten escribir datos.
