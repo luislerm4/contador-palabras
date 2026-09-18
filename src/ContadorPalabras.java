@@ -25,6 +25,8 @@ public class ContadorPalabras {
 
         Map<String, Integer> frecuencias = new HashMap<>();
 
+        int totalPalabras = 0;
+
         try (BufferedReader lector = Files.newBufferedReader(archivo)) {
             String linea;
 
@@ -43,8 +45,29 @@ public class ContadorPalabras {
                             palabra,
                             frecuencias.getOrDefault(palabra, 0) + 1
                     );
+
+                    totalPalabras++;
                 }
             }
+
+            System.out.println("Total de palabras: " + totalPalabras);
+            System.out.println("Palabras diferentes: " + frecuencias.size());
+
+            String palabraMasFrecuente = "";
+            int frecuenciaMaxima = 0;
+
+            for (Map.Entry<String, Integer> entrada : frecuencias.entrySet()) {
+                if (entrada.getValue() > frecuenciaMaxima) {
+                    palabraMasFrecuente = entrada.getKey();
+                    frecuenciaMaxima = entrada.getValue();
+                }
+            }
+
+            System.out.println(
+                    "Palabra más frecuente: "
+                            + palabraMasFrecuente
+                            + " (" + frecuenciaMaxima + ")"
+            );
 
             Map<String, Integer> ordenadas = new TreeMap<>(frecuencias);
 
