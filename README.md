@@ -1,5 +1,7 @@
 # Práctica guiada: Contador de frecuencia de palabras usando flujos de E/S en Java
 
+**Nombre:** Luis Angel Lerma Coss
+**Expediente:** 225203072
 **Curso:** Desarrollo de Sistemas III  
 **Tema:** Flujos de entrada/salida en Java  
 **Duración sugerida:** 90–120 minutos  
