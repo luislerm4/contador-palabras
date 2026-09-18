@@ -25,7 +25,16 @@ public class ContadorPalabras {
             String linea;
 
             while ((linea = lector.readLine()) != null) {
-                System.out.println(linea);
+                linea = linea.toLowerCase();
+                linea = linea.replaceAll("[^\\p{L}\\p{N}\\s]", "");
+
+                String[] palabras = linea.trim().split("\\s+");
+
+                for (String palabra : palabras) {
+                    if (!palabra.isEmpty()) {
+                        System.out.println(palabra);
+                    }
+                }
             }
 
         } catch (IOException e) {

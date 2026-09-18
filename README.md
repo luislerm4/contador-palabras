@@ -242,7 +242,7 @@ java
 ```
 
 **Pregunta:** ¿Qué ocurriría si no normalizamos las palabras antes de contabilizarlas?
-
+El programa podria confundir la misma palabra como palabras distintas debido a las mayusculas y minusculas.
 # Parte VI. Contabilizar palabras
 
 ## 11. Utilizar un `Map`
