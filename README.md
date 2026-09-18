@@ -1,6 +1,7 @@
 # Práctica guiada: Contador de frecuencia de palabras usando flujos de E/S en Java
 
 **Nombre:** Luis Angel Lerma Coss
+
 **Expediente:** 225203072
 **Curso:** Desarrollo de Sistemas III  
 **Tema:** Flujos de entrada/salida en Java  
@@ -85,11 +86,11 @@ Los flujos de salida permiten escribir datos.
 
 ## 4. Identificar entrada, procesamiento y salida
 
-| Elemento | Descripción |
-|---|---|
-| Entrada | |
-| Procesamiento | |
-| Salida | |
+| Elemento | Descripción                                                                                           |
+|---|-------------------------------------------------------------------------------------------------------|
+| Entrada | archivo texto.txt                                                                                     |
+| Procesamiento | el programa lee el texto, separa las palabras individualmente y cuenta cuantas veces aparece cada una |
+| Salida | un nuevo archivo frecuencias.txt con el resultado de las palabras y el conteo                         |
 
 ```text
                    INPUT STREAM
@@ -115,6 +116,7 @@ Los flujos de salida permiten escribir datos.
 
 **Pregunta:** ¿Qué tipo de flujo resulta más apropiado para este problema: bytes o caracteres? Justifique.
 
+Es más apropiado usar un flujo de caracteres por que no estamos hablando de imagenes o binarios, sino que estamos hablando de texto plabo
 # Parte III. Recibir y representar el archivo
 
 ## 5. Proporcionar el nombre mediante argumento
@@ -145,7 +147,7 @@ java ContadorPalabras datos/texto.txt
 ```
 
 **Pregunta:** ¿Por qué resulta preferible recibir el nombre del archivo como argumento en lugar de escribirlo directamente en el código?
-
+Por que permite procesar distintos archivos sin necesidad de modificar el codigo fuente, facilitando la integracion del programa.
 ## 6. Trabajar con `Path`
 
 ```java
