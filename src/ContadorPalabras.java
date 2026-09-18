@@ -23,19 +23,26 @@ public class ContadorPalabras {
 
         Map<String, Integer> frecuencias = new HashMap<>();
 
-        try (BufferedReader lector = Files.newBufferedReader(archivo)) {
+        try (
+                BufferedReader lector = Files.newBufferedReader(archivo)
+        ) {
             String linea;
 
             while ((linea = lector.readLine()) != null) {
                 linea = linea.toLowerCase();
                 linea = linea.replaceAll("[^\\p{L}\\p{N}\\s]", "");
 
+                if (linea.isBlank()) {
+                    continue;
+                }
+
                 String[] palabras = linea.trim().split("\\s+");
 
                 for (String palabra : palabras) {
-                    if (!palabra.isEmpty()) {
-                        frecuencias.put(palabra, frecuencias.getOrDefault(palabra, 0) + 1);
-                    }
+                    frecuencias.put(
+                            palabra,
+                            frecuencias.getOrDefault(palabra, 0) + 1
+                    );
                 }
             }
 
@@ -45,7 +52,7 @@ public class ContadorPalabras {
             }
 
         } catch (IOException e) {
-            System.err.println("Error al leer el archivo: " + e.getMessage());
+            System.err.println("Error de lectura: " + e.getMessage());
         }
     }
 }
