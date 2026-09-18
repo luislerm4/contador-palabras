@@ -1,0 +1,27 @@
+PALABRA              FRECUENCIA
+--------------------------------
+aplicaciones         1
+archivos             2
+datos                2
+de                   5
+desarrollar          1
+diferentes           1
+en                   1
+entrada              1
+es                   1
+escribir             2
+flujos               2
+información          2
+java                 4
+leer                 2
+lenguaje             1
+los                  2
+permite              1
+permiten             2
+programa             2
+programación         1
+puede                2
+salida               1
+también              1
+tipos                1
+un                   3
