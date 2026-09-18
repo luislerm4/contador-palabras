@@ -4,6 +4,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class ContadorPalabras {
     public static void main(String[] args) {
@@ -23,9 +24,7 @@ public class ContadorPalabras {
 
         Map<String, Integer> frecuencias = new HashMap<>();
 
-        try (
-                BufferedReader lector = Files.newBufferedReader(archivo)
-        ) {
+        try (BufferedReader lector = Files.newBufferedReader(archivo)) {
             String linea;
 
             while ((linea = lector.readLine()) != null) {
@@ -46,9 +45,16 @@ public class ContadorPalabras {
                 }
             }
 
-            System.out.println("\nFrecuencia de palabras:");
-            for (Map.Entry<String, Integer> entrada : frecuencias.entrySet()) {
-                System.out.println(entrada.getKey() + ": " + entrada.getValue());
+            Map<String, Integer> ordenadas = new TreeMap<>(frecuencias);
+
+            System.out.println("\nFrecuencia de palabras (ordenadas):");
+
+            for (Map.Entry<String, Integer> entrada : ordenadas.entrySet()) {
+                System.out.printf(
+                        "%-20s %d%n",
+                        entrada.getKey(),
+                        entrada.getValue()
+                );
             }
 
         } catch (IOException e) {
